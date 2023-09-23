@@ -1,7 +1,7 @@
 // проверить
 const allowedCors = [
-  'https://praktikum.tk',
-  'http://praktikum.tk',
+  'https://api.mesto.natalyakya.nomoredomainsrocks.ru',
+  'http://api.mesto.natalyakya.nomoredomainsrocks.ru',
   'localhost:3000',
 ];
 
