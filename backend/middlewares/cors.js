@@ -2,7 +2,7 @@
 const allowedCors = [
   'https://api.mesto.natalyakya.nomoredomainsrocks.ru',
   'http://api.mesto.natalyakya.nomoredomainsrocks.ru',
-  'localhost:3000',
+  'localhost:3001',
 ];
 
 const allowCors = (req, res, next) => {
