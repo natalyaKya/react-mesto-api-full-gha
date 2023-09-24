@@ -1,8 +1,8 @@
 // проверить
 const allowedCors = [
-  'https://api.mesto.natalyakya.nomoredomainsrocks.ru',
-  'http://api.mesto.natalyakya.nomoredomainsrocks.ru',
-  'localhost:3001',
+  'https://mesto.natalyakya.nomoredomainsrocks.ru',
+  'http://mesto.natalyakya.nomoredomainsrocks.ru',
+  'localhost:3000',
 ];
 
 const allowCors = (req, res, next) => {
