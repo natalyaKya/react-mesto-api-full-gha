@@ -17,7 +17,6 @@ const {
   createUser,
 } = require('./controllers/users');
 const { validationLogin, validationCreateUser } = require('./middlewares/validation');
-const corsOptions = require('./utils/cors');
 
 const { PORT = 3001 } = process.env;
 
