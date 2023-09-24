@@ -158,6 +158,7 @@ function App() {
     auth
       .authorization({ email, password })
       .then((res) => {
+        console.log(res);
         if (res.token) {
           setloggedIn(true);
           setUserEmail(email);
