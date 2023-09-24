@@ -26,10 +26,10 @@ module.exports.returnUserById = (req, res, next) => {
 };
 
 module.exports.returnCurrentUser = (req, res, next) => {
-  User.findById(req.user._id)
+  User.findOne(req.user._id)
     .orFail(new NotFoundError(`Пользователь с таким _id ${req.params.userId} не найден`))
     .then((user) => {
-      res.send({ user });
+      res.send(user);
     })
     .catch(next);
 };
