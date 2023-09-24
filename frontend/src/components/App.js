@@ -158,7 +158,6 @@ function App() {
     auth
       .authorization({ email, password })
       .then((res) => {
-        console.log(res);
         if (res.user._id) {
           setloggedIn(true);
           setUserEmail(email);
@@ -176,7 +175,7 @@ function App() {
       .then((res) => {
         console.log(res);
         if (res) {
-          setUserEmail(res.user.email);
+          setUserEmail(res.email);
           setloggedIn(true);
           navigate("/", { replace: true });
         }
