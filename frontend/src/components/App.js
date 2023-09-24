@@ -170,17 +170,19 @@ function App() {
       });
   }
   function checkToken() {
-    const token = localStorage.getItem("token");
-    if (token) {
-      auth
-        .checkToken(token)
-        .then((res) => {
+    auth
+      .checkToken()
+      .then((res) => {
+        if (res) {
           setUserEmail(res.data.email);
           setloggedIn(true);
           navigate("/", { replace: true });
-        })
-        .catch(console.error);
-    }
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        setloggedIn(false);
+      });
   }
 
   useEffect(() => {

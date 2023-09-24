@@ -29,12 +29,11 @@ class Auth {
       body: JSON.stringify({ email, password }),
     }).then((res) => this._checkStatus(res));
   }
-  checkToken(token) {
+  checkToken() {
     return fetch(`${this.baseUrl}/users/me`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       },
       credentials: 'include',
     }).then((res) => this._checkStatus(res));
