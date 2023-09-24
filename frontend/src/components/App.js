@@ -174,6 +174,7 @@ function App() {
     auth
       .checkToken()
       .then((res) => {
+        console.log(res);
         if (res) {
           setUserEmail(res.data.email);
           setloggedIn(true);
