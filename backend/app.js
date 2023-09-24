@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors'); +6
+const cors = require('cors');
 require('dotenv').config();
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -25,6 +25,7 @@ const app = express();
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
   useNewUrlParser: true,
 });
+app.use(cors({ origin: ['http://localhost:3000', 'https://mesto.natalyakya.nomoredomainsrocks.ru', 'http://mesto.natalyakya.nomoredomainsrocks.ru'], credentials: true }));
 app.use(
   rateLimit({
     windowMs: 40 * 60 * 1000,
@@ -34,7 +35,7 @@ app.use(
 );
 app.use(helmet());
 app.use(express.json());
-app.use(cors({ origin: ['http://localhost:3000', 'https://mesto.natalyakya.nomoredomainsrocks.ru', 'http://mesto.natalyakya.nomoredomainsrocks.ru'], credentials: true }));
+
 
 app.use(requestLogger);
 
