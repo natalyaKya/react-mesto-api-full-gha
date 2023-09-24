@@ -5,6 +5,10 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/not-found-err');
 const UnauthorizedError = require('../errors/unauthor-err');
 const DublicateError = require('../errors/dublicate-err');
+const { JWT_SECRET_KEY } = require('../utils/constants');
+
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 
 module.exports.returnUsers = (req, res, next) => {
   User.find({})
@@ -96,7 +100,7 @@ module.exports.login = (req, res, next) => {
           if (!matched) {
             return next(new UnauthorizedError('Неверные логин или пароль'));
           }
-          const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+          const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : JWT_SECRET_KEY, { expiresIn: '7d' });
           return res.cookie('jwt', token, { httpOnly: true })
             .send({ message: 'Авторизация прошла успешно' }).end();
         });
