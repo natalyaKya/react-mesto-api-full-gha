@@ -14,7 +14,10 @@ class Auth {
   register({ email, password }) {
     return fetch(`${this.baseUrl}/signup`, {
       method: "POST",
-      headers: this.headers,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": "true",
+      },
       credentials: 'include',
       body: JSON.stringify({ email, password }),
     }).then((res) => this._checkStatus(res));
