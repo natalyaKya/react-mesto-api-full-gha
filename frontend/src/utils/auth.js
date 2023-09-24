@@ -15,6 +15,7 @@ class Auth {
     return fetch(`${this.baseUrl}/signup`, {
       method: "POST",
       headers: this.headers,
+      credentials: 'include',
       body: JSON.stringify({ email, password }),
     }).then((res) => this._checkStatus(res));
   }
@@ -22,6 +23,7 @@ class Auth {
     return fetch(`${this.baseUrl}/signin`, {
       method: "POST",
       headers: this.headers,
+      credentials: 'include',
       body: JSON.stringify({ email, password }),
     }).then((res) => this._checkStatus(res));
   }
@@ -30,6 +32,7 @@ class Auth {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        credentials: 'include',
         Authorization: `Bearer ${token}`,
       },
     }).then((res) => this._checkStatus(res));
