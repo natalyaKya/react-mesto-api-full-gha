@@ -5,7 +5,7 @@ const { JWT_SECRET_KEY } = require('../utils/constants');
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports = (req, res, next) => {
-  const { jwt } = req.cookies;
+  const { jwt } = req.cookies.jwt;
   if (!jwt) {
     return next(new UnauthorizedError('Необходима авторизация'));
   }
