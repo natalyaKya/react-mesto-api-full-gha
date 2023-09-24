@@ -176,7 +176,7 @@ function App() {
       .then((res) => {
         console.log(res);
         if (res) {
-          setUserEmail(res.email);
+          setUserEmail(res.user.email);
           setloggedIn(true);
           navigate("/", { replace: true });
         }
