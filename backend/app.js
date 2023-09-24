@@ -26,14 +26,14 @@ const app = express();
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
   useNewUrlParser: true,
 });
-app.use(cors(corsOptions));
-// app.use(
-//   rateLimit({
-//     windowMs: 40 * 60 * 1000,
-//     max: 70,
-//     message: 'Too many requests',
-//   }),
-// );
+app.use(cors({ origin: ['http://localhost:3000', 'https://mesto.natalyakya.nomoredomainsrocks.ru', 'http://mesto.natalyakya.nomoredomainsrocks.ru'], credentials: true }));
+app.use(
+  rateLimit({
+    windowMs: 40 * 60 * 1000,
+    max: 70,
+    message: 'Too many requests',
+  }),
+);
 app.use(helmet());
 app.use(express.json());
 
