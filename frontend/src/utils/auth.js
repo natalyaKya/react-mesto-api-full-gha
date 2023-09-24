@@ -32,9 +32,9 @@ class Auth {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        credentials: 'include',
         Authorization: `Bearer ${token}`,
       },
+      credentials: 'include',
     }).then((res) => this._checkStatus(res));
   }
 }

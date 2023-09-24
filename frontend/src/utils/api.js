@@ -66,7 +66,7 @@ class Api {
 export const api = new Api({
   baseUrl: "https://api.mesto.natalyakya.nomoredomainsrocks.ru",
   headers: {
-    authorization: "2119d583-6996-44fe-8d88-fc7f1abcc084",
+    authorization: "81bb1163-42bc-4044-b403-05dff297282e",
     "Content-Type": "application/json",
   },
 });
