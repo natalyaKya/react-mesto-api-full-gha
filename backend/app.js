@@ -17,6 +17,7 @@ const {
   createUser,
 } = require('./controllers/users');
 const { validationLogin, validationCreateUser } = require('./middlewares/validation');
+const corsOptions = require('./utils/cors');
 
 const { PORT = 3001 } = process.env;
 
@@ -25,7 +26,7 @@ const app = express();
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
   useNewUrlParser: true,
 });
-app.use(cors({ origin: ['http://localhost:3000', 'https://mesto.natalyakya.nomoredomainsrocks.ru', 'http://mesto.natalyakya.nomoredomainsrocks.ru'], credentials: true }));
+app.use(cors(corsOptions));
 // app.use(
 //   rateLimit({
 //     windowMs: 40 * 60 * 1000,
