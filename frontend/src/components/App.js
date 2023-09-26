@@ -99,10 +99,10 @@ function App() {
         setIsLoading(false);
       });
   }
-  function handleUpdateUser({ name, about }) {
+  function handleUpdateUser({ user }) {
     setIsLoading(true);
     api
-      .setUserInfoApi(name, about)
+      .setUserInfoApi(user.name, user.about)
       .then((res) => {
         setСurrentUser(res);
         closeAllPopups();

@@ -72,7 +72,7 @@ module.exports.updateProfile = (req, res, next) => {
   })
     .orFail(new NotFoundError('Такого пользователя не существует'))
     .then((user) => {
-      res.send({ name, about });
+      res.send({ user });
     })
     .catch(next);
 };
