@@ -185,9 +185,9 @@ function App() {
       });
   }
 
-  useEffect(() => {
-    checkToken();
-  }, []);
+  // useEffect(() => {
+  //   checkToken();
+  // }, []);
 
   useEffect(() => {
     if (loggedIn) {
