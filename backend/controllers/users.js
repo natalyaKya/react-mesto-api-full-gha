@@ -26,6 +26,7 @@ module.exports.returnUserById = (req, res, next) => {
 };
 
 module.exports.returnCurrentUser = (req, res, next) => {
+  console.log(req);
   const { _id } = req.user
   User.findOne({ _id })
     .orFail(new NotFoundError(`Пользователь с таким _id ${req.params.userId} не найден`))
