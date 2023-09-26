@@ -24,7 +24,10 @@ module.exports.returnCurrentUser = (req, res, next) => {
     .then((user) => {
       res.send(user);
     })
-    .catch(next);
+    .catch((err) => {
+
+      return next(req.user);
+    });
 };
 
 module.exports.returnUserById = (req, res, next) => {
