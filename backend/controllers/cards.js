@@ -26,7 +26,7 @@ module.exports.deleteCardBiId = (req, res, next) => {
       }
       return Card.findByIdAndRemove(req.params.cardId)
         .then(() => {
-          res.status(200).send({ data: card });
+          res.status(200).send(card);
         })
         .catch(next);
     })
