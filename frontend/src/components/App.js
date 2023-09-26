@@ -99,7 +99,7 @@ function App() {
         setIsLoading(false);
       });
   }
-  function handleUpdateUser({ user }) {
+  function handleUpdateUser(user) {
     setIsLoading(true);
     api
       .setUserInfoApi(user.name, user.about)
