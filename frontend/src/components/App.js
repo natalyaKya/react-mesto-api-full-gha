@@ -112,10 +112,10 @@ function App() {
         setIsLoading(false);
       });
   }
-  function handleUpdateAvatar({ avatar }) {
+  function handleUpdateAvatar(user) {
     setIsLoading(true);
     api
-      .changeAvatar(avatar)
+      .changeAvatar(user.avatar)
       .then((res) => {
         setСurrentUser(res);
         closeAllPopups();

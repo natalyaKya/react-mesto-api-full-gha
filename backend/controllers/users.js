@@ -82,7 +82,7 @@ module.exports.updateAvatar = (req, res, next) => {
   User.findByIdAndUpdate(req.user._id, { avatar }, { new: true })
     .orFail(new NotFoundError('Такого пользователя не существует'))
     .then((user) => {
-      res.send({ user });
+      res.send(user);
     })
     .catch(next);
 };
