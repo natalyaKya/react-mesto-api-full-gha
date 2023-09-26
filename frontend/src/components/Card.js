@@ -23,9 +23,9 @@ function Card(props) {
       <div
         onClick={() => handleClick()}
         className="elements__image"
-        style={{ backgroundImage: `url(${props.link})` }}
+        style={{ backgroundImage: `url(${props.card.link})` }}
       ></div>
-      <h2 className="elements__text">{props.name}</h2>
+      <h2 className="elements__text">{props.card.name}</h2>
       {isOwn && (
         <button className="elements__delete" onClick={handleDeleteClick} />
       )}
@@ -35,7 +35,7 @@ function Card(props) {
           onClick={() => handleLikeClick()}
           type="button"
         ></button>
-        <span className={"elements__likes"}>{props.likes.length}</span>
+        <span className={"elements__likes"}>{props.card.likes.length}</span>
       </div>
     </div>
   );
