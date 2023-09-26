@@ -17,14 +17,14 @@ module.exports.returnUsers = (req, res, next) => {
 };
 
 module.exports.returnCurrentUser = (req, res, next) => {
-  // console.log(req);
-  // const { _id } = req.user
-  // User.findOne({ _id })
-  //   .orFail(new NotFoundError(`Пользователь с таким _id ${req.user._id} не найден`))
-  //   .then((user) => {
-  res.send(req);
-  // })
-  // .catch(next);
+  console.log(req);
+  const { _id } = req.user
+  User.findOne({ _id })
+    .orFail(new NotFoundError(`Пользователь с таким _id ${req.user._id} не найден`))
+    .then((user) => {
+      res.send(user);
+    })
+    .catch(next);
 };
 
 module.exports.returnUserById = (req, res, next) => {
