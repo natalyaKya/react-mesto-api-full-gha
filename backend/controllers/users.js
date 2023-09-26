@@ -16,15 +16,6 @@ module.exports.returnUsers = (req, res, next) => {
     .catch(next);
 };
 
-module.exports.returnUserById = (req, res, next) => {
-  User.findById(req.params.userId)
-    .orFail(new NotFoundError(`Пользователь с таким _id ${req.params.userId} не найден`))
-    .then((user) => {
-      res.send({ user });
-    })
-    .catch(next);
-};
-
 module.exports.returnCurrentUser = (req, res, next) => {
   console.log(req);
   const { _id } = req.user
@@ -32,6 +23,15 @@ module.exports.returnCurrentUser = (req, res, next) => {
     .orFail(new NotFoundError(`Пользователь с таким _id ${req.user._id} не найден`))
     .then((user) => {
       res.send(user);
+    })
+    .catch(next);
+};
+
+module.exports.returnUserById = (req, res, next) => {
+  User.findById(req.params.userId)
+    .orFail(new NotFoundError(`Пользователь с таким _id ${req.params.userId} не найден`))
+    .then((user) => {
+      res.send({ user });
     })
     .catch(next);
 };
