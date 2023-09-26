@@ -57,7 +57,7 @@ module.exports.dislikeCard = (req, res, next) => {
   )
     .orFail(new NotFoundError(`Карточка с таким _id ${req.params.userId} не найдена`))
     .then((card) => {
-      res.send({ card });
+      res.send(card);
     })
     .catch(next);
 };
