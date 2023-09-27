@@ -8,14 +8,16 @@ function Header(props) {
       <img className="header__logo" src={logo} alt="Логотип проекта Место" />
       {props.userEmail ? (
         <div className="header__navigation">
-          <span className="header__navigation_email">{props.userEmail}</span>
+          {props.userEmail
+            ? <span className="header__navigation_email">{props.userEmail}</span>
+            : ""
+          }
           <NavLink
             to={props.link}
             className={({ isActive }) =>
-              `${
-                isActive
-                  ? "header__navigation_link_active"
-                  : "header__navigation_link"
+              `${isActive
+                ? "header__navigation_link_active"
+                : "header__navigation_link"
               }`
             }
           >

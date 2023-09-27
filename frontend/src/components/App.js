@@ -187,7 +187,6 @@ function App() {
 
   useEffect(() => {
     checkToken();
-    setUserEmail("");
   }, []);
 
   useEffect(() => {
