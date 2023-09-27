@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useState } from "react"
 import logo from "../images/logo.svg";
 
 function Header(props) {
