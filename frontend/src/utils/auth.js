@@ -39,13 +39,13 @@ class Auth {
     }).then((res) => this._checkStatus(res));
   }
   clearCookie() {
-    return fetch(`${this._options.baseUrl}/users/signout`, {
+    return fetch(`${this.baseUrl}/users/signout`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
       credentials: 'include',
-    }).then(res => this._checkStatusServer(res))
+    }).then((res) => this._checkStatus(res))
   }
 }
 
