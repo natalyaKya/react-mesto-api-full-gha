@@ -16,6 +16,7 @@ function Main(props) {
         userEmail={props.userEmail}
         link={"/sign-in"}
         navigation={"Выйти"}
+        signout={props.sugnout}
       />
       <main className="content">
         <section className="profile">
