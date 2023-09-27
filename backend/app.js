@@ -47,7 +47,7 @@ app.get('/crash-test', () => {
 });
 app.post('/signin', validationLogin, login);
 app.post('/signup', validationCreateUser, createUser);
-app.post('/signout', logout);
+app.get('/signout', logout);
 app.use(cookieParser());
 app.use(auth);
 app.use('/users', routerUser);

@@ -4,7 +4,6 @@ import { useState } from "react"
 import logo from "../images/logo.svg";
 
 function Header(props) {
-  const [isActive, setisActive] = useState(false);
 
   return (
     <header className="header">
