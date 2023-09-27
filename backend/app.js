@@ -27,6 +27,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
   useNewUrlParser: true,
 });
 app.use(cors({ origin: ['http://localhost:3000', 'https://mesto.natalyakya.nomoredomainsrocks.ru', 'http://mesto.natalyakya.nomoredomainsrocks.ru'], credentials: true }));
+app.use(helmet());
+app.use(express.json());
+
+
+app.use(requestLogger);
 app.use(
   rateLimit({
     windowMs: 40 * 60 * 1000,
@@ -34,11 +39,6 @@ app.use(
     message: 'Too many requests',
   }),
 );
-app.use(helmet());
-app.use(express.json());
-
-
-app.use(requestLogger);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
