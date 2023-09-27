@@ -186,8 +186,13 @@ function App() {
   }
 
   function signout() {
-    setUserEmail("");
-    setloggedIn(false);
+    auth.clearCookie()
+      .then(() => {
+        navigate("/sign-in")
+        setUserEmail("");
+        setloggedIn(false);
+      })
+      .catch(err => console.log(err))
   }
 
   useEffect(() => {
@@ -204,6 +209,7 @@ function App() {
         .catch(console.error);
     }
   }, [loggedIn]);
+
   return (
     <AppContext.Provider value={{ isLoading, onClose: closeAllPopups }}>
       <CurrentUserContex.Provider value={currentUser}>
