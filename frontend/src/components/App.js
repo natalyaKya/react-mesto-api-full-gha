@@ -188,7 +188,6 @@ function App() {
   function signout() {
     setUserEmail("");
     setloggedIn(false);
-    navigate("/signin", { replace: true });
   }
 
   useEffect(() => {

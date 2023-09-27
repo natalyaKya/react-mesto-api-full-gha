@@ -14,7 +14,7 @@ function Main(props) {
     <>
       <Header
         userEmail={props.userEmail}
-        link={props.signout}
+        link={"/sign-in"}
         navigation={"Выйти"}
       />
       <main className="content">
