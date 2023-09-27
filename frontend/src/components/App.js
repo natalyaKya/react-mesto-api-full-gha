@@ -185,6 +185,12 @@ function App() {
       });
   }
 
+  function signout() {
+    setUserEmail("");
+    setloggedIn(false);
+    navigate("/signin", { replace: true });
+  }
+
   useEffect(() => {
     checkToken();
   }, []);
@@ -217,6 +223,7 @@ function App() {
                 onCardDelete={handleConfirm}
                 cards={cards}
                 userEmail={userEmail}
+                signout={signout}
               />
             }
           />
