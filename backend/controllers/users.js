@@ -108,3 +108,8 @@ module.exports.login = (req, res, next) => {
     })
     .catch(next);
 };
+
+module.exports.logout = (req, res) => {
+  return res.clearCookie('jwt')
+    .send({ message: 'Куки удалены' }).end();
+}

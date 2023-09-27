@@ -38,6 +38,15 @@ class Auth {
       credentials: 'include',
     }).then((res) => this._checkStatus(res));
   }
+  clearCookie() {
+    return fetch(`${this._options.baseUrl}/users/signout`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: 'include',
+    }).then(res => this._checkStatusServer(res))
+  }
 }
 
 export const auth = new Auth({
