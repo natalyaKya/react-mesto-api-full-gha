@@ -16,7 +16,7 @@ function Header(props) {
       {props.userEmail ?
         <div className="header__navigation">
           <span className="header__navigation_email">{props.userEmail}</span>
-          <NavLink onClick={exitAccaunt} className={({ isActive }) => `${isActive ? "header__navigation_link_active" : "header__navigation_link"}`}>{props.navigation}</NavLink>
+          <span onClick={exitAccaunt} className={({ isActive }) => `${isActive ? "header__navigation_link_active" : "header__navigation_link"}`}>{props.navigation}</span>
         </div>
         : <NavLink className="header__navigation_link" to={props.link}>{props.navigation}</NavLink>}
     </header>
